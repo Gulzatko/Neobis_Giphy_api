@@ -3,7 +3,7 @@ let APIKEY ="mn4AUcpnKuGAvExTtc6MuzJQS8Bgt51I";
 document.addEventListener("DOMContentLoaded", getData);
 
 function getData(){
- document.getElementById("searchBtn").addEventListener("click",e=>{
+   document.getElementById("searchBtn").addEventListener("click",e=>{
     e.preventDefault();
     let url =`https://api.giphy.com/v1/gifs/search?api_key=${APIKEY}&limit=2&q=`;
     let str = document.getElementById("search").value.trim();
@@ -15,19 +15,24 @@ function getData(){
         // data, pagination, meta
         console.log(content.data);
         console.log('META', content.meta);
-       let fig =document.createElement('figure');
-       let img =document.createElement('img');
-       let fc = document.createElement('figcaption');
-       img.src = content.data[0].images.downsized.url;
-       img.alt = content.data[0].title;
-       fc.textContent =content.data[0].title;
-       fig.appendChild(img);
-       fig.appendChild(fc);
-       let display = document.querySelector('.display');
-       display.appendChild(fig);
+         console.log(content);
+          const display = document.querySelector(".display")
+          let ul = document.createElement("ul");
+          display.appendChild(ul);
+          let li =document.createElement("li");
+          ul.appendChild(li);
+           for(let i=0; i<content.data.length; i++){
+            let img = document.createElement("img");
+              img.src = content.data[i].images.downsized.url;
+              li.appendChild(img);
+           }
+          
+         })
+         .catch(err=>{
+          console.error(err)  
+        })
+     
     })
-    .catch(err=>{
-      console.error(e)  
-    })
- })   
-}
+   
+   }
+ 
