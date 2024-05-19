@@ -6,7 +6,7 @@ function getData(){
    document.getElementById("searchBtn").addEventListener("click",e=>{
     e.preventDefault();
     let url =`https://api.giphy.com/v1/gifs/search?api_key=${APIKEY}&limit=2&q=`;
-    let str = document.getElementById("search").value.trim();
+    let str = document.getElementById("search-input").value.trim();
     url= url.concat(str);
     console.log(url);
     fetch(url)
@@ -18,8 +18,10 @@ function getData(){
          console.log(content);
           const display = document.querySelector(".display")
           let ul = document.createElement("ul");
+          ul.classList.add("giphy-ul")
           display.appendChild(ul);
           let li =document.createElement("li");
+          li.classList.add("giphy-li");
           ul.appendChild(li);
            for(let i=0; i<content.data.length; i++){
             let img = document.createElement("img");
@@ -31,7 +33,7 @@ function getData(){
          .catch(err=>{
           console.error(err)  
         })
-     
+       
     })
    
    }
