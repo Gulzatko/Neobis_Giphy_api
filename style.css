@@ -57,16 +57,35 @@ form img{
 .display{
     width:100%;
     height: 900px;
+    display:grid;
+    grid-template-columns:;
 }
 .giphy-ul{
-    display:grid;
-    grid-template-columns: auto auto auto;
-    grid-template-row: auto auto auto;
-    gap:50px 100px;
+    
+    gap:50px 50px;
     padding: 10px;
 }
 .giphy-li{
     list-style:none;
     padding: 20px;
+}
+.loader{
+    display: none;
+    height: 15em;
+    width:15em;
+    border: 3em solid #2b304d;
+    border-radius: 50%;
+    border-top-color:#13fc97;
+    position:absolute;
+    transform: translate(-50%,-50%);
+    left:50%;
+    top:50%;
+    animation: spin 3s infinite;
+
+}
+@keyframes spin{
+    100%{
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
 }
 
