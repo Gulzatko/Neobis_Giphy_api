@@ -9,10 +9,11 @@ body{
     background-color:black;
 }
 main{
-    width:1200px;
+    width:100%;
     min-height: 1200px;
     display: flex;
-    flex-direction: column;
+    flex-direction:column;
+    margin-left: 100px;
 }
 form{
     width:100%;
@@ -20,6 +21,7 @@ form{
     display: flex;
     flex-direction:row; 
     justify-content: space-between;
+   
 }
 form img{
    width:400px;
@@ -35,6 +37,7 @@ form img{
     justify-content: space-between;
     margin-top: 40px;
     background: linear-gradient(purple,orangered);
+    outline: none;
     border-radius: 40px;
 }
 #search-input{
@@ -57,19 +60,22 @@ form img{
 .display{
     width:100%;
     height: 900px;
-    display:grid;
-    grid-template-columns:;
+   
 }
-.giphy-ul{
-    
-    gap:50px 50px;
-    padding: 10px;
-}
+
 .giphy-li{
+    justify-self: center;
+    display:grid;
+    grid-template-columns:1fr 1fr 1fr;
     list-style:none;
-    padding: 20px;
+    width:100%;
 }
-.loader{
+.giphy-li img {
+    width:400px;
+    height: 400px;
+    padding: 10px 10px;
+}
+/* .loader{
     display: none;
     height: 15em;
     width:15em;
@@ -82,10 +88,10 @@ form img{
     top:50%;
     animation: spin 3s infinite;
 
-}
-@keyframes spin{
+} */
+/* @keyframes spin{
     100%{
         transform: translate(-50%, -50%) rotate(360deg);
     }
-}
+} */
 
