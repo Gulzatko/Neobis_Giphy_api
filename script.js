@@ -27,10 +27,10 @@ function getData(){
            for(let i=0; i<content.data.length; i++){
             let img = document.createElement("img");
               img.src = content.data[i].images.downsized.url;
-              li.appendChild(img);
-              
+              li.appendChild(img); 
+              display.insertAdjacentElement('afterbegin',li);
+              document.getElementById("search-input").value = '';
            }
-           document.getElementById("search-input").value = '';
            
          })
          .catch(err=>{
