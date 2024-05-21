@@ -8,8 +8,6 @@ function getData(){
     let url =`https://api.giphy.com/v1/gifs/search?api_key=${APIKEY}&limit=10&q=`;
     let str = document.getElementById("search-input").value.trim();
     url= url.concat(str);
-    
-  
     console.log(url);
    
     fetch(url)
@@ -30,8 +28,10 @@ function getData(){
             let img = document.createElement("img");
               img.src = content.data[i].images.downsized.url;
               li.appendChild(img);
+              
            }
            document.getElementById("search-input").value = '';
+           
          })
          .catch(err=>{
           console.error(err)  
