@@ -9,7 +9,8 @@ function getData(){
     let str = document.getElementById("search-input").value.trim();
     url= url.concat(str);
     console.log(url);
-   
+    const display = document.querySelector(".display");
+    display.innerHTML = '';
     fetch(url)
     .then(response=>response.json())
     .then(content=>{
